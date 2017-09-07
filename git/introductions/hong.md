@@ -1,8 +1,2 @@
-
-
-
-
-
-
-Hello, this is my temp fil
+Hello, this is my temp file
 
