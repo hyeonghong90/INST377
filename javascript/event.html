@@ -7,6 +7,7 @@
 			height: 200px;
 			width: 200px;
 			background: orange;
+			cursor: pointer;
 		}
 
 		div {
@@ -21,20 +22,30 @@
 </head>
 
 <body>
-	<div id="square"></div>
+	<div id="square" onclick="show_sentence()"></div>
 
 	<div>
 		<p> Hello, this is inside a PPPPP tag. </p>
 	</div>
 
 	<!-- for your exercise, comment this line out.  -->
-	<button onclick="show_sentence()">Put the Sentence</button>
+<!--	<button onclick="show_sentence()">Put the Sentence</button>  -->
 
 <script>
+var flag = true;
 
 function show_sentence(){
-	document.getElementById("square").innerHTML = document.getElementsByTagName("p")[0].innerHTML;	
+
+	if (flag == true){
+		document.getElementById("square").innerHTML = 			document.getElementsByTagName("p")[0].innerHTML;
+		flag = false;		
+	} else {
+		document.getElementById("square").innerHTML =
+		"";
+		flag = true;
+	}
 }
+	
 
 </script>
 
