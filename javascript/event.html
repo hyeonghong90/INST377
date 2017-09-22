@@ -17,6 +17,10 @@
 		.round {
 			border-radius: 20px;
 		}
+
+		#square:hover{
+			cursor: pointer;
+		}
 		
 	</style>
 </head>
@@ -29,12 +33,17 @@
 	</div>
 
 	<!-- for your exercise, comment this line out.  -->
+<<<<<<< HEAD
 <!--	<button onclick="show_sentence()">Put the Sentence</button>  -->
+=======
+	<!-- <button onclick="show_sentence()">Put the Sentence</button> -->
+>>>>>>> upstream/master
 
 <script>
 var flag = true;
 
 function show_sentence(){
+<<<<<<< HEAD
 
 	if (flag == true){
 		document.getElementById("square").innerHTML = 			document.getElementsByTagName("p")[0].innerHTML;
@@ -44,6 +53,9 @@ function show_sentence(){
 		"";
 		flag = true;
 	}
+=======
+	document.getElementById("square").innerHTML = document.getElementsByTagName("p")[0].innerHTML;
+>>>>>>> upstream/master
 }
 	
 
