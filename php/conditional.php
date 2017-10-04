@@ -48,4 +48,17 @@ $json = json_decode($organizations, true);
 print ("<pre>");
 print_r($json);
 print ("</pre>");
+
+echo "Printing everything from JSON file.<br><br>";
+foreach ($json as $key => $value){
+	foreach ($value as $k => $v){
+		if (($k == "Organization Name") || ($k == "City")){
+			echo $k . ": " . $v . "<br>";
+		}
+	}
+	echo "<br>";
+}
+
+
+
 ?>

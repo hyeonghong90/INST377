@@ -5,6 +5,24 @@
 	div {
 		margin-bottom: 20px;
 	}
+    table, th, td, tr {
+        border: 1px solid black;
+    }
+    .header {
+        /*font setting*/
+        font-family: cursive;
+        font-style: italic;
+
+        /*background cor setting*/
+        background: antiquewhite;
+
+        /*text alignment*/
+        text-align: center;
+    }
+    .contents:hover {
+        background-color: yellow;
+    }
+ 
 </style>
 
 <!-- Data -->
@@ -79,7 +97,7 @@ var organizations = [
         "Organization Name": "3 Round Stones Inc",
         "Organization Type": "For-profit",
         "Sectors": "IT and geospatial",
-        "Description": "3 Round Stones' Open Source platform is used by the Fortune 2000 and US Government Agencies to collect, publish and reuse data, both public and proprietary.",
+        "Description": "3 Round Stones' Open Source platform is used by the Fortune 2000 and US Government Agencies to clect, publish and reuse data, both public and proprietary.",
         "City": "Arlington",
         "State/Region": "Virginia",
         "Founding Year": 2010,
@@ -201,13 +219,102 @@ var organizations = [
 <body>
 <!-- Feel free to add empty tags. Data shouldn't be here. -->
 	<div id="org_table"></div>
+    <div id="org_statistics"></div>
 
 <script>
 // outputs the first item of the organizations array. Just for testing.
-console.log(organizations[0]); 
+//console.log(organizations[0]); 
 
 // Your JavaScript code goes here
+function create_table(){
+    var t = document.createElement("table");
+    t.setAttribute("id", "org_tbl")
+    create_header(t);
+    for (i=0; i<organizations.length; i++){
+        var r = document.createElement("tr");
+        r.setAttribute("id","row"+(i+1));
+        r.setAttribute("class", "contents")
+        r.setAttribute("style", "");
+        var row_id = r.id;
+        event_click(r, row_id);
+        for (var prop in organizations[i]){
+            var c = document.createElement('td');
+            c.innerHTML = organizations[i][prop];
+            r.appendChild(c);
+        }
+    t.appendChild(r);
+    }
+    org_table.appendChild(t);
+}
 
+function create_header(t){
+    org_keys = Object.keys(organizations[0]);
+    var h = document.createElement("tr");
+    h.setAttribute("id","table_header");
+    h.setAttribute("class","header");
+    for (var index in org_keys){
+        var c = document.createElement("th");
+        c.innerHTML = org_keys[index];
+        h.appendChild(c);
+    }
+    t.appendChild(h);
+}
+
+function event_click(r, row_id){
+    r.onclick = function() {
+        var deleted_row = document.getElementById(row_id);
+        deleted_row.parentNode.removeChild(deleted_row);
+        statistic_calculation();
+        }
+}
+
+function statistic_table(){
+    var statistic = ["The number of profit organization:", "The number of oraganization that was found before 2000:", "The number of North America organization:", "The number of organization that used Environment type of data:"];
+    var s_t = document.createElement("table");
+    s_t.setAttribute("id","stat_table")
+    for (i=0; i<4; i++){
+        var s_r = document.createElement("tr");
+        for (j=0; j<2; j++){
+            var s_c = document.createElement("td");
+            if (j==0){
+                s_c.innerHTML = statistic[i];
+            }
+            s_r.appendChild(s_c);
+        }
+        s_t.appendChild(s_r);
+    }
+    document.getElementById("org_statistics").appendChild(s_t);
+    statistic_calculation();
+}
+
+function statistic_calculation(){
+    num_profit_org = 0;
+    num_org_pre_2000 = 0;
+    num_org_NA = 0;
+    num_org_ENV = 0;
+    table_length = document.getElementById("org_tbl").rows.length;
+    for (i=0; i<table_length; i++){
+        if (document.getElementById("org_tbl").rows[i].cells[4].innerHTML == "For-profit"){
+            num_profit_org++;
+        }
+        if(parseInt(document.getElementById("org_tbl").rows[i].cells[9].innerHTML) < 2000){
+            num_org_pre_2000++;
+        }
+        if(document.getElementById("org_tbl").rows[i].cells[0].innerHTML == "North America"){
+            num_org_NA++;
+        }
+        if(document.getElementById("org_tbl").rows[i].cells[11].innerHTML.includes("Environment")){
+            num_org_ENV++;
+        }
+    }
+    document.getElementById("stat_table").rows[0].cells[1].innerHTML = num_profit_org;
+    document.getElementById("stat_table").rows[1].cells[1].innerHTML = num_org_pre_2000;
+    document.getElementById("stat_table").rows[2].cells[1].innerHTML = num_org_NA;
+    document.getElementById("stat_table").rows[3].cells[1].innerHTML = num_org_ENV;
+}
+
+create_table();
+statistic_table();
 
 </script>
 
