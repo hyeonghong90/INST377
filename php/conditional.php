@@ -53,7 +53,7 @@ $organizations = file_get_contents('json/data.json');
 
 echo "Parsing a JSON file to a PHP array.";
 $json = json_decode($organizations, true);
-<<<<<<< HEAD
+// <<<<<<< HEAD
 print ("<pre>");
 print_r($json);
 print ("</pre>");
