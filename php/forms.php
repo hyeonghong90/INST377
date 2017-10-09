@@ -52,6 +52,7 @@ echo "</form>";
 	<strong>SOLUTION 1: Validations using PHP</strong> <br>
 	<form action='animal.php' method='POST'>
 		Don't put back slashes in the text box: <input type="text" name="animal"> <br>
+		<!-- box: <input type="text" name="animal"> <br> -->
 		<input type="submit"><br>
 	</form>
 </div>
