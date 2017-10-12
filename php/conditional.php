@@ -68,7 +68,6 @@ foreach ($json as $key => $value){
 	echo "<br>";
 }
 
-=======
 // print ("<pre>");
 // print_r($json);
 // print ("</pre>");
@@ -89,14 +88,6 @@ foreach ($json as $key => $value){
 }
 
 echo "</table>";
-
-
-
-
-
-
-
->>>>>>> upstream/master
 
 
 ?>
