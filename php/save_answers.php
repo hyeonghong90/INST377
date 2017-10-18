@@ -41,6 +41,9 @@ if ($answer1 == "yes"){
 
 echo "<br><br>";
 
+//
+$sql = "INSERT INTO alcohol (adult, alcohol_freq) VALUE ('$answer1', '$answer1_1')";
+query_to_db($conn, $sql);
 
 echo "THANKS FOR YOUR ANSWERS";
 
