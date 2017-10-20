@@ -61,6 +61,7 @@ $(document).ready(function(){
 	$("#find").click(function(){
 		// $("#table").find(".row").css("background", "red"); // finding elements by a CSS selector
 		$("td:contains('Amy')").css("background", "red"); // finding an element based on contents
+		// If you want to search value you need to use "td[value=amy]"
 		// $("#table").children(".row").css("background", "red"); // doesn't work. Finding elements among the direct children
 		// $("#title").next().css("background", "red");  // selecting the next element.
 		// $("#title").siblings().css("background", "red"); //selecting all the siblings
