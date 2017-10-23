@@ -26,31 +26,31 @@
 <script>
 
 // JavaScript Solution
-function showSentence(){
-	var xhttp = new XMLHttpRequest();
-	xhttp.onreadystatechange = function() {
-		if (this.readyState == 4 && this.status == 200) {
-			document.getElementById("square").innerHTML = this.responseText;
-		}
-	};
-	xhttp.open("GET", "ajax_test.txt", true);
-	xhttp.send();
-}
+// function showSentence(){
+// 	var xhttp = new XMLHttpRequest();
+// 	xhttp.onreadystatechange = function() {
+// 		if (this.readyState == 4 && this.status == 200) {
+// 			document.getElementById("square").innerHTML = this.responseText;
+// 		}
+// 	};
+// 	xhttp.open("GET", "ajax_test.txt", true);
+// 	xhttp.send();
+// }
 
 
 $(document).ready(function(){
 
 	
-	// $("#square").click(function(){
-	// 	// // Using "GET" method
-	// 	// $.get("ajax_test.php",
-	// 	// 	{
-	// 	//   		name: "John Smith"
-	// 	// 	}, 
-	// 	// 	function(response, status){
-	// 	// 		$("#square").text(status + ": " + response);
-	// 	// 	}
-	// 	// );
+	$("#square").click(function(){
+		// Using "GET" method
+		$.get("ajax_test.php",
+			{
+		  		name: "John Smith"
+			}, 
+			function(response, status){
+				$("#square").text(status + ": " + response);
+			}
+		);
 
 	// 	// // Using "POST" method
 	// 	// $.post("ajax_test.php",
@@ -134,8 +134,8 @@ $(document).ready(function(){
 
 <body>
 	
-	<div id="square" onclick="showSentence()"></div>	
-	<!-- <div id="square"></div> -->
+	<!-- <div id="square" onclick="showSentence()"></div>	 -->
+	<div id="square"></div>
 	
 
 
