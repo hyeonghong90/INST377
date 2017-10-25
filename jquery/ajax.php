@@ -170,15 +170,29 @@ $(document).ready(function(){
 			alert ("Failed: " + status);
 		});
 
+<<<<<<< HEAD
+=======
+		
+
+>>>>>>> upstream/master
 		$.when(request1.then(function(){
 			$("#square").css("color", "blue");
 		})).done(function(){
 			request2.then(function(response, status){
+<<<<<<< HEAD
 			$("#square").text(status + ": " + response);
 			$("#square").css("color", "green");
 			});
 
 		});
+=======
+				$("#square").text(status + ": " + response);
+				$("#square").css("color", "green");
+			});
+		});
+
+		
+>>>>>>> upstream/master
 
 
 

@@ -36,12 +36,25 @@ $(document).ready(function(){
 			data: {name: "John Smith"},
 			type: "POST"			
 		});
+<<<<<<< HEAD
 		
 		$.when(request1.done(function(data, status){
 			sentence = data;
 			$("#square").text(sentence).css("color", "blue")
 		})).then(function(){	
 
+=======
+
+		
+
+		
+		
+	
+		$.when(request1.done(function(data, status){
+			sentence = data;
+			$("#square").text(sentence).css("color", "blue");
+		})).then(function(){	
+>>>>>>> upstream/master
 			var request2 = $.ajax({
 				url: "ajax_answer.php",
 				data: {data: sentence},
