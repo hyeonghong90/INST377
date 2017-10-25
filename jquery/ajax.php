@@ -42,7 +42,6 @@ $(document).ready(function(){
 
 	
 	$("#square").click(function(){
-<<<<<<< HEAD
 		// Using "GET" method
 		$.get("ajax_test.php",
 			{
@@ -86,20 +85,20 @@ $(document).ready(function(){
 	// 	// );
 
 
-	// 	// // 1. It is possible to save an AJAX object in a variable.
-	// 	// // 2. How do you make sure the order between request1 and request2?
-	// 	// var request1 = $.ajax({
-	// 	// 	url: "ajax_test.php",
-	// 	// 	data: {name: "John Smith"},
-	// 	// 	type: "POST"			
-	// 	// });
+		// 1. It is possible to save an AJAX object in a variable.
+		// 2. How do you make sure the order between request1 and request2?
+		var request1 = $.ajax({
+			url: "ajax_test.php",
+			data: {name: "John Smith"},
+			type: "POST"			
+		});
 
-	// 	// var request2 = $.ajax({
-	// 	// 	url: "ajax_test.txt",
-	// 	// 	data: {name: "John Smith"},
-	// 	// 	type: "POST"			
-	// 	// });
-=======
+		var request2 = $.ajax({
+			url: "ajax_test.txt",
+			data: {name: "John Smith"},
+			type: "POST"			
+		});
+
 		// Using "GET" method (1)
 		// $.get("ajax_test.txt",function(response, status){
 		// 	$("#square").text(status + ": " + response);
@@ -161,7 +160,6 @@ $(document).ready(function(){
 			data: {name: "John Smith"},
 			type: "POST"			
 		});
->>>>>>> upstream/master
 		
 		request1.done(function(response, status){
 			$("#square").text(status + ": " + response);
@@ -172,15 +170,19 @@ $(document).ready(function(){
 			alert ("Failed: " + status);
 		});
 
-		request1.then(function(){
+		$.when(request1.then(function(){
 			$("#square").css("color", "blue");
-		});
-
-		request2.then(function(response, status){
+		})).done(function(){
+			request2.then(function(response, status){
 			$("#square").text(status + ": " + response);
 			$("#square").css("color", "green");
+			});
+
 		});
 
+
+
+		
 		
 
 	});
