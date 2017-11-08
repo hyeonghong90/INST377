@@ -41,12 +41,13 @@
 $(document).ready(function(){
 // bar chart
 
-	// Data 
-	var dataArray = [];
-	
+	// Data 	
 	var svg = d3.select(".bar");
 
-	// Creating bars
+	d3.csv("query.php", function(error, dataArray) {
+		if (error) throw error;
+
+		// Creating bars
 	svg.selectAll("rect")
 		.data(dataArray)
 		.enter()
@@ -67,6 +68,7 @@ $(document).ready(function(){
 		.attr("x", function(d, i) {return (i * 50) + 30})
 		.attr("y", function(d, i) {return 420 - (d * 10)});
 	
+	});
 });
 
 </script>
