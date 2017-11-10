@@ -15,10 +15,10 @@
 
     <style>    
     /* Apply this CSS only when the width is more than 1400px */
-    @media (min-width: 1400px) { 
-      .container{
-         width: 1250px;
-      }
+    @media (min-width: 300px) { 
+      /*.container{
+         width: 300px;
+      }*/
     }
 
     .container-fluid{
@@ -27,7 +27,7 @@
     }
 
     /* Apply this CSS only when the width is less than 1000px and the contents are on screen */
-    @media only screen and (max-width: 1000px) { 
+    @media only screen and (max-width: 400px) { 
       .container-fluid{
          margin: 30px 30px 30px 30px;
          background: yellow;
@@ -41,15 +41,24 @@
       margin: 10px;
       background: white;
     }
+<<<<<<< HEAD
     div.fixed {
     	width: 200px;
     	flex-basis: unset;
     	flex-grow: unset;
+=======
+
+    div.fixed {
+      width: 200px;
+      flex-basis: unset;
+      flex-grow: unset;
+>>>>>>> upstream/master
     }
     
     </style>
   </head>
   <body>
+<<<<<<< HEAD
 
     <div class="container" >    
     	<div class="row">
@@ -57,11 +66,25 @@
     			300px fixed column
     		</div>
     	</div>
+=======
+    <!-- Container 1 -->
+    <div class="container" >  
+      <div class="row">
+        <div class="col fixed">
+          200px fixed column
+        </div>
+        <div class="col-sm">
+          Main column
+        </div>        
+      </div>
+>>>>>>> upstream/master
     </div>
 
+    <!-- Container 2 -->
     <div class="container-fluid" >    
     </div>
 
+    <!-- Container 3 -->
     <div class="container">
       <div class="row">
         <div class="col-sm">
