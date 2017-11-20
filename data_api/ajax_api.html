@@ -31,15 +31,11 @@ $(document).ready(function(){
 	
 	$("#square").click(function(){
 		$.getJSON("https://api.usa.gov/jobs/search.json?data", function(result){
-<<<<<<< HEAD
 	        $.each(result, function(i, field){
 	        	$("#square").append(field.position_title);
-=======
-
 	        $.each(result, function(i, field){
 	            console.log(field);
 	            $("#square").append(field.organization_name + ", " + field.position_title + "<br>");
->>>>>>> upstream/master
 	        });
 
 	    });
