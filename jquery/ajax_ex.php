@@ -7,7 +7,15 @@
 		margin-left: 100px;
 		height: 200px;
 		width: 200px;
+		background: blue;
+	}
+	#small_square {
+		margin-top: 25px;
+		margin-left: 180px;
+		height: 40px;
+		width: 200px;
 		background: orange;
+
 	}
 
 	div {
@@ -36,21 +44,17 @@ $(document).ready(function(){
 			data: {name: "John Smith"},
 			type: "POST"			
 		});
-<<<<<<< HEAD
 		
 		$.when(request1.done(function(data, status){
 			sentence = data;
 			$("#square").text(sentence).css("color", "blue")
 		})).then(function(){	
 
-=======
-
 	
 		$.when(request1.done(function(data, status){
 			sentence = data;
 			$("#square").text(sentence).css("color", "blue");
 		})).then(function(){	
->>>>>>> upstream/master
 			var request2 = $.ajax({
 				url: "ajax_answer.php",
 				data: {data: sentence},
@@ -76,7 +80,12 @@ $(document).ready(function(){
 
 <body>
 	
-	<div id="square"></div>
+	<div id="square">
+		<div id="small_square"></div>
+		<div id="small_square"></div>
+		<div id="small_square"></div>
+	</div>
+
 	
 </body>
 </html>
