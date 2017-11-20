@@ -45,10 +45,6 @@ $(document).ready(function(){
 
 =======
 
-		
-
-		
-		
 	
 		$.when(request1.done(function(data, status){
 			sentence = data;
@@ -64,7 +60,7 @@ $(document).ready(function(){
 				// display the returned data below the square
 				console.log(data);	
 				// your code goes here	
-				$("#square").text(data)
+				$("#square").text(data).css("color", "red");
 			});	
 		});
 

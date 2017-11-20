@@ -30,12 +30,20 @@ $(document).ready(function(){
 
 	
 	$("#square").click(function(){
+<<<<<<< HEAD
 		$.getJSON("https://api.usa.gov/jobs/search.json?data", function(result){
 	        $.each(result, function(i, field){
 	        	$("#square").append(field.position_title);
+=======
+		$.getJSON("https://api.ed.gov/data/crdc_enrollment_2013-14?api_key=YENVlIrW33aw9NXeUrDVgFLWKOxJWp2NWYm07DV7", function(result){
+
+>>>>>>> upstream/master
 	        $.each(result, function(i, field){
 	            console.log(field);
-	            $("#square").append(field.organization_name + ", " + field.position_title + "<br>");
+	            $.each(field, function(k, f){
+	            	$("#square").append(f.LEA_NAME + "<br>");	
+	            })
+	            
 	        });
 
 	    });
