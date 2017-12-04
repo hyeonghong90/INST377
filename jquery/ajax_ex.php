@@ -101,20 +101,15 @@ $(document).ready(function(){
 </head>
 
 <body>
-	
-<<<<<<< HEAD
 	<div id="square">
 		<div id="small_square"></div>
 		<div id="small_square"></div>
 		<div id="small_square"></div>
 	</div>
-
-=======
 	<div id="square"></div> 
 	<div id="john" class="person">john</div>
 	<div id="mary" class="person">mary</div>
 	<div id="steve" class="person">steve</div>
->>>>>>> upstream/master
 	
 </body>
 </html>

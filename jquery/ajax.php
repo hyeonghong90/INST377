@@ -42,7 +42,7 @@ $(document).ready(function(){
 
 	
 	$("#square").click(function(){
-		// Using "GET" method
+		Using "GET" method
 		$.get("ajax_test.php",
 			{
 		  		name: "John Smith"
@@ -52,15 +52,15 @@ $(document).ready(function(){
 			}
 		);
 
-	// 	// // Using "POST" method
-	// 	// $.post("ajax_test.php",
-	// 	// 	{
-	// 	//   		name: "John Smith"
-	// 	// 	}, 
-	// 	// 	function(response, status){
-	// 	// 		$("#square").text(status + ": " + response);
-	// 	// 	}
-	// 	// );
+		// Using "POST" method
+		$.post("ajax_test.php",
+			{
+		  		name: "John Smith"
+			}, 
+			function(response, status){
+				$("#square").text(status + ": " + response);
+			}
+		);
 
 	// 	// // Primitive function 
 	// 	// $.ajax({
@@ -73,31 +73,31 @@ $(document).ready(function(){
 	// 	// });
 
 
-	// 	// The simplest form of jQuery AJAX
-	// 	// $(this).load("ajax_test.txt");
+		// The simplest form of jQuery AJAX
+		// $(this).load("ajax_test.txt");
 
-	// 	// // A bit advanced form of "load"
-	// 	// $(this).load("ajax_test.php", 
-	// 	// 	{
-	// 	// 		name: "John Smith"
-	// 	// 	},
-	// 	// 	function (response, status, xhr){}
-	// 	// );
+		// // A bit advanced form of "load"
+		// $(this).load("ajax_test.php", 
+		// 	{
+		// 		name: "John Smith"
+		// 	},
+		// 	function (response, status, xhr){}
+		// );
 
 
 		// 1. It is possible to save an AJAX object in a variable.
 		// 2. How do you make sure the order between request1 and request2?
-		var request1 = $.ajax({
-			url: "ajax_test.php",
-			data: {name: "John Smith"},
-			type: "POST"			
-		});
+		// var request1 = $.ajax({
+		// 	url: "ajax_test.php",
+		// 	data: {name: "John Smith"},
+		// 	type: "POST"			
+		// });
 
-		var request2 = $.ajax({
-			url: "ajax_test.txt",
-			data: {name: "John Smith"},
-			type: "POST"			
-		});
+		// var request2 = $.ajax({
+		// 	url: "ajax_test.txt",
+		// 	data: {name: "John Smith"},
+		// 	type: "POST"			
+		// });
 
 		// Using "GET" method (1)
 		// $.get("ajax_test.txt",function(response, status){
@@ -114,7 +114,7 @@ $(document).ready(function(){
 		// 	}
 		// );
 
-		// // Using "POST" method
+		// Using "POST" method
 		// $.post("ajax_test.php",
 		// 	{
 		//   		name: "John Smith"
@@ -170,29 +170,19 @@ $(document).ready(function(){
 			alert ("Failed: " + status);
 		});
 
-<<<<<<< HEAD
-=======
-		
-
->>>>>>> upstream/master
 		$.when(request1.then(function(){
 			$("#square").css("color", "blue");
 		})).done(function(){
 			request2.then(function(response, status){
-<<<<<<< HEAD
 			$("#square").text(status + ": " + response);
 			$("#square").css("color", "green");
 			});
 
 		});
-=======
 				$("#square").text(status + ": " + response);
 				$("#square").css("color", "green");
 			});
 		});
-
-		
->>>>>>> upstream/master
 
 
 
